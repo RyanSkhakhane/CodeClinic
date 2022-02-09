@@ -1,2 +1,0 @@
-emails = ['rskhakha021@student.wethinkcode.co.za']
-cal_ids = ['']

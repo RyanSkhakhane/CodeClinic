@@ -3,6 +3,7 @@ import sys
 import colorama
 from colorama import Fore, Back, Style
 
+import time
 colorama.init( autoreset=True)
 
 ####################################################
@@ -15,8 +16,7 @@ def get_input():
     commands = input('Waiting for command input ')
     return commands
 
-import time
-commands_list = ["help","list_events","exit","create_event","login","update_event"]
+commands_list = ["help","list_events","exit","create_event","login","update_event","volunteer_slot"]
 
 def cc():
     print('\033[1;32;40mWTC Code Clinic version 0.0.1(Unstable)\nTo view valid commands type in help.')
@@ -56,6 +56,11 @@ def cc():
             elif commands.lower() == "create_event":
                 import create_event
                 create_event
+
+            elif commands.lower() == "volunteer_slot":
+                import volunteer_slot
+                volunteer_slot
+
         else:
             print("Command not recognized ⚠️")
             

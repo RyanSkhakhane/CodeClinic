@@ -3,6 +3,7 @@ from cal_setup import get_calendar_service
 import list_events
 
 def main():
+    list_events.main()
     # update the event to tomorrow 9 AM IST
     service = get_calendar_service()
 
@@ -10,13 +11,14 @@ def main():
     tomorrow = datetime(d.year, d.month, d.day, 9)+timedelta(days=1)
     start = tomorrow.isoformat()
     end = (tomorrow + timedelta(hours=2)).isoformat()
-
+    summary = input('Input event summary:')
+    description = input('Input desscription here: ')
     event_result = service.events().update(
         calendarId='primary',
-        eventId='gne8fb3gnlprb6jaenfcbvjbs8',
+        eventId= input('Copy and paste event ID here: '),
         body={
-        "summary": 'Updated Automating calendar',
-        "description": 'This is a tutorial example of automating google calendar with python, updated time.',
+        "summary": summary,
+        "description": description,
         "start": {"dateTime": start, "timeZone": '+2'},
         "end": {"dateTime": end, "timeZone": '+2'},
         },
@@ -28,5 +30,3 @@ def main():
     print("starts at: ", event_result['start']['dateTime'])
     print("ends at: ", event_result['end']['dateTime'])
 
-if __name__ != '__main__':
-    main()

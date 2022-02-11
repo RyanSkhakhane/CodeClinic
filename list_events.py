@@ -1,5 +1,8 @@
 import datetime
 from cal_setup import get_calendar_service
+from prettytable import PrettyTable
+
+
 
 def main():
    service = get_calendar_service()
@@ -17,11 +20,13 @@ def main():
    print()
    print("LIST OF EVENTS\n")
  
+   event_list = PrettyTable(['Count','start time','Summary','Event ID'])
    for event in events:
        count +=1
        start = event['start'].get('dateTime', event['start'].get('date'))
-       print(count,".",start, '--',event['summary'],'--', 'event ID: ', event["id"])
-   print()
+       event_list.add_row([count,start,event['summary'],event["id"]])
+   print(event_list)
+
 
 if __name__ != '__main__':
    main()

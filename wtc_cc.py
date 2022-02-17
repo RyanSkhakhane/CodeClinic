@@ -53,9 +53,7 @@ def cc():
             elif commands.lower() == "list_events":
                 import list_events
                 list_events
-            elif commands.lower() == "create_event":
-                import create_event
-                create_event
+          
 
             elif commands.lower() == "volunteer_slot":
                 import volunteer_slot

@@ -7,6 +7,10 @@ import list_events
 
 list_eventIds = []
 
+def get_input():
+   book = input('Enter the event Id you want to book: ')
+   return book
+
 
 def book():
 
@@ -21,7 +25,7 @@ def book():
       user_email = input("Please provide your email address:  ")
       list_events.main(list_events.events_list, list_events.events_ID_list)
       print()
-      book = input('Enter the event Id you want to book: ')
+      get_input()
       
       if book not in list_eventIds:
          list_eventIds.append(book)
@@ -36,11 +40,12 @@ def book():
       else:
          print("Event booked")
    except :
-      print("Invalid inputs")
+      print("Invalid inputs, please check your email or event_Id")
       pass
 book()   
 
    
+
 
 
 

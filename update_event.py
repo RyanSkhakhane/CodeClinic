@@ -2,20 +2,30 @@ from datetime import datetime, timedelta
 from cal_setup import get_calendar_service
 import list_events
 
-def main():
-    list_events.main()
-    # update the event to tomorrow 9 AM IST
+
+def update():
+
+    """
+    function for handling updating of events.
+    """
+    
+    list_events.main(list_events.events_list,list_events.events_ID_list)
+    
     service = get_calendar_service()
 
     d = datetime.now().date()
-    tomorrow = datetime(d.year, d.month, d.day, 9)+timedelta(days=1)
-    start = tomorrow.isoformat()
-    end = (tomorrow + timedelta(hours=2)).isoformat()
-    summary = input('Input event summary:')
+    summary = input('Input event summary: ')
     description = input('Input desscription here: ')
+    hour  = int(input('To what hour are you changing the event to(enter 2 digits only)? '))
+    Days = int(input("Provide a day , enter 0 for today or 1 for tomorrow: "))
+    event_details = datetime(d.year, d.month, d.day, hour)+timedelta(days=Days)
+    start = event_details.isoformat()
+    duration = float(0.5)
+    end = (event_details + timedelta(hours=duration)).isoformat()
+
     event_result = service.events().update(
-        calendarId='primary',
-        eventId= input('Copy and paste event ID here: '),
+        calendarId='primary' and 'f2kecidvtbk56k8j6885l6pkso@group.calendar.google.com',
+        eventId= input('Copy and paste event Id here: '),
         body={
         "summary": summary,
         "description": description,
@@ -30,3 +40,5 @@ def main():
     print("starts at: ", event_result['start']['dateTime'])
     print("ends at: ", event_result['end']['dateTime'])
 
+
+update()

@@ -8,6 +8,7 @@ import list_events
 list_eventIds = []
 
 def get_input():
+   """function for getting an input"""
    book = input('Enter the event Id you want to book: ')
    return book
 

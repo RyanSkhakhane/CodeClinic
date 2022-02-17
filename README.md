@@ -9,9 +9,9 @@
 =====================================================================
                                               
 
-    for -  update_event         run > python3 run.py update_event
+    for - update_event         run > python3 run.py update_event
 
-    for  - list_events          run > python3 run.py list_events
+    for - list_events          run > python3 run.py list_events
                                                     
     for - volunteer_slot        run > python3 run.py volunteer_slot 
 

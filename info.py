@@ -3,7 +3,12 @@ from colorama import Back,Fore,Style
 colorama.init(autoreset=True)
 
 
-def info():
+def help():
+    """
+   
+   function for displaying the help information for the user.
+   
+   """
     reset = '\033[39m'
     cmd = Fore.RED + 'COMMAND'
     des = Fore.RED +'DESCRIPTION' 
@@ -17,22 +22,23 @@ These commands are to help navigate the WTC Code Clinic terminal app.
 --------------------+----------------------------------------------------------------------------------------------
 |help               |- Displays the info currently on screen.                                                     |
 --------------------+----------------------------------------------------------------------------------------------
-|create_event       |- Allows the user to create an event.                                                        |
---------------------+----------------------------------------------------------------------------------------------
 |update_event       |- Updates an event, given the event's ID, start and end time.                                |
 --------------------+----------------------------------------------------------------------------------------------
 |list_events        |- Fetches all calendar events from Code Clinc and User's google calendar.                    |
 --------------------+----------------------------------------------------------------------------------------------
-|login              |- Logs an active session with google calendar API.                                           |
--------------------------------------------------------------------------------------------------------------------
 |exit               |- Clears session data then closes the app.                                                   |
+--------------------+----------------------------------------------------------------------------------------------
+|volunteer_slot     |- Allows a volunteer to create an event.                                                     |
+--------------------+---------------------------------------------------------------------------------------------
+|Cancel_volunteer   |- Allows a volunteer to cancel an event.                                                     |
+--------------------+----------------------------------------------------------------------------------------------
+|book_slot          |- Allows a student to book an event                                                          |
 -------------------------------------------------------------------------------------------------------------------
-|                      more features commiung soon!                                                               |
+|cancel_booking     |- Allows a student to cancel a booking                                                       |
 -------------------------------------------------------------------------------------------------------------------
+
 """
 
     print(Help)
 
-if __name__ != '__main__':
-    info()
-    pass
+help()

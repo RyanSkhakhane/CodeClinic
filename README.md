@@ -4,7 +4,10 @@
 
 #This is a list of all commands:
 
+# code_clinicsa teama
+codeclinicsteama@gmail.com   ----- code clinics calendar is under this email.
 
+# in order for someone to use this project, they must have write access, meaning they need to subscibe to the calendar 
 
 =====================================================================
                                               

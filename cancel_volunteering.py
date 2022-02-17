@@ -24,13 +24,13 @@ def cancel_volunteer():
       cancel = input('Enter the event Id you want to cancel: ')
       
 
-      event = service.events().get(calendarId='c_horn1dvmjj9p8d6mbioh5rc53s@group.calendar.google.com', eventId=cancel).execute()
+      event = service.events().get(calendarId='f2kecidvtbk56k8j6885l6pkso@group.calendar.google.com', eventId=cancel).execute()
 
 
-      service.events().delete(calendarId='c_horn1dvmjj9p8d6mbioh5rc53s@group.calendar.google.com', eventId=cancel).execute()
+      service.events().delete(calendarId='f2kecidvtbk56k8j6885l6pkso@group.calendar.google.com', eventId=cancel).execute()
       print("Slot Cancelled")
       
    except:
       print("Please check your inputs again")
-      pass
+      
 cancel_volunteer()

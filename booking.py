@@ -26,7 +26,7 @@ def book():
       user_email = input("Please provide your email address:  ")
       list_events.main(list_events.events_list, list_events.events_ID_list)
       print()
-      get_input()
+      book = get_input()
       
       if book not in list_eventIds:
          list_eventIds.append(book)
